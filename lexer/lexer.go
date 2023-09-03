@@ -11,7 +11,7 @@ type Lexer struct {
 	ch           byte // current char under examination
 }
 
-func new(input string) *Lexer {
+func New(input string) *Lexer {
 	l := &Lexer{input: input}
 	l.readChar()
 	return l
@@ -36,7 +36,7 @@ func (l *Lexer) peekChar() byte {
 }
 
 
-func (l *Lexer) nextToken() token.Token {
+func (l *Lexer) NextToken() token.Token {
 	var tok token.Token
 
 	l.skipWhitespace()

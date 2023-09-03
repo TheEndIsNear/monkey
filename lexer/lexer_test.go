@@ -23,10 +23,10 @@ func TestNextToken(t *testing.T) {
 		{token.EOF, ""},
 	}
 
-	l := new(input)
+	l := New(input)
 
 	for i, tt := range tests {
-		tok := l.nextToken()
+		tok := l.NextToken()
 
 		if tok.Type != tt.expectedType {
 			t.Fatalf("tests[%d] - tokentype wrong. expected=%q, got=%q",
@@ -140,10 +140,10 @@ func TestTokenizingMonkeyCode(t *testing.T) {
 		{token.EOF, ""},
 	}
 
-	l := new(input)
+	l := New(input)
 
 	for i, tt := range tests {
-		tok := l.nextToken()
+		tok := l.NextToken()
 
 		if tok.Type != tt.expectedType {
 			t.Fatalf("tests[%d] - tokentype wrong. expected=%q, got=%q",
