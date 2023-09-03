@@ -85,6 +85,7 @@ func (l *Lexer) readNumber() string {
 	for isDigit(l.ch) {
 		l.readChar()
 	}
+	l.readPosition--
 	return l.input[position:l.position]
 }
 
